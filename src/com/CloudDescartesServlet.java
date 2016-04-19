@@ -15,6 +15,8 @@ public class CloudDescartesServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
 		
+		System.out.println("Je suis CloudDescartesServlet : tache de fond qui ecrit dans la base");
+				
 		DatastoreService dataStore = DatastoreServiceFactory.getDatastoreService();
 		
 		Entity etudiant = new Entity("Etudiant");
@@ -24,10 +26,6 @@ public class CloudDescartesServlet extends HttpServlet {
 		Transaction tx = dataStore.beginTransaction();
 	
 		dataStore.put(etudiant);
-	
-	
-		
-		resp.setContentType("text/plain");
-		resp.getWriter().println("Hello, world");
+
 	}
 }

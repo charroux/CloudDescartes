@@ -27,6 +27,15 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	</servlet-mapping>
 	
 	
+	<servlet>
+		<servlet-name>LancerTache</servlet-name>
+		<servlet-class>com.LancerTacheServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>LancerTache</servlet-name>
+		<url-pattern>/lancerTacheURL</url-pattern>
+	</servlet-mapping>
 	
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>

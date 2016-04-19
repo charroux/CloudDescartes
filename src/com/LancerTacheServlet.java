@@ -12,24 +12,21 @@ import com.google.appengine.api.datastore.Query;
 import com.google.appengine.api.datastore.Query.Filter;
 import com.google.appengine.api.datastore.Query.FilterPredicate;
 import com.google.appengine.api.datastore.Query.FilterOperator;
+import com.google.appengine.api.taskqueue.Queue;
+import com.google.appengine.api.taskqueue.QueueFactory;
+import com.google.appengine.api.taskqueue.TaskOptions;
+import com.google.appengine.api.taskqueue.TaskOptions.Method;
 
 @SuppressWarnings("serial")
-public class RequeteServlet extends HttpServlet {
+public class LancerTacheServlet extends HttpServlet {
 	
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
 		
-		System.out.println("Je suis RequeteServlet qui fait une requete");
+		System.out.println("Je suis LancerTacheServlet");
 		
-		DatastoreService dataStore = DatastoreServiceFactory.getDatastoreService();
-	
-		Filter propertyFilter =  new FilterPredicate("age", FilterOperator.GREATER_THAN_OR_EQUAL, 20		);
-		Query query = new Query("Etudiant").setFilter(propertyFilter);
-		
-		PreparedQuery pq = dataStore.prepare(query);
-		for (Entity result : pq.asIterable()) {
-				System.out.println(result.getProperty("nom"));
-		}
+		Queue queue = QueueFactory.getDefaultQueue(); 
+		queue.add(TaskOptions.Builder.withUrl("/clouddescartes").method(Method.GET));
 	}
 	
 }
