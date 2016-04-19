@@ -4,14 +4,30 @@ xmlns="http://java.sun.com/xml/ns/javaee"
 xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+	
 	<servlet>
 		<servlet-name>CloudDescartes</servlet-name>
 		<servlet-class>com.CloudDescartesServlet</servlet-class>
 	</servlet>
+	
 	<servlet-mapping>
 		<servlet-name>CloudDescartes</servlet-name>
 		<url-pattern>/clouddescartes</url-pattern>
 	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>Requete</servlet-name>
+		<servlet-class>com.RequeteServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>Requete</servlet-name>
+		<url-pattern>/requeteURL</url-pattern>
+	</servlet-mapping>
+	
+	
+	
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>

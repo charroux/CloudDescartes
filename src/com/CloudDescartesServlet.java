@@ -11,6 +11,7 @@ import com.google.appengine.api.datastore.Transaction;
 
 @SuppressWarnings("serial")
 public class CloudDescartesServlet extends HttpServlet {
+	
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
 		
@@ -24,13 +25,8 @@ public class CloudDescartesServlet extends HttpServlet {
 	
 		dataStore.put(etudiant);
 	
-		tx.commit();
+	
 		
-		resp.setContentType("text/plain");
-		resp.getWriter().println("Hello, world");
-	}
-	public void doDelete(HttpServletRequest req, HttpServletResponse resp)
-			throws IOException {
 		resp.setContentType("text/plain");
 		resp.getWriter().println("Hello, world");
 	}
