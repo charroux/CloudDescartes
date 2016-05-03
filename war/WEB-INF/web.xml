@@ -37,6 +37,16 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<url-pattern>/lancerTacheURL</url-pattern>
 	</servlet-mapping>
 	
+	<filter>
+		<filter-name>FiltreMultiTenant</filter-name>
+		<filter-class>com.FiltreMultiTenant</filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>FiltreMultiTenant</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>

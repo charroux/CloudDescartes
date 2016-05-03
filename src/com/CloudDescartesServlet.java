@@ -20,12 +20,14 @@ public class CloudDescartesServlet extends HttpServlet {
 		DatastoreService dataStore = DatastoreServiceFactory.getDatastoreService();
 		
 		Entity etudiant = new Entity("Etudiant");
-		etudiant.setProperty("nom", "Tintin");
-		etudiant.setProperty("age", 20);
+		etudiant.setProperty("nom", "Haddock");
+		etudiant.setProperty("age", 50);
 		
 		Transaction tx = dataStore.beginTransaction();
 	
 		dataStore.put(etudiant);
+		
+		tx.commit();
 
 	}
 }
